@@ -116,7 +116,7 @@ You can use logrotate to maintain the Dovecot log files so they don't grow beyon
 .. code-block:: none
 
    postrotate
-   kill -s 0 `cat /var/run/dovecot/master.pid` || kill -s USR1 `cat /var/run/dovecot/master.pid`
+   kill -s 0 `cat /var/run/dovecot/master.pid` && kill -s USR1 `cat /var/run/dovecot/master.pid`
    endscript
 
 Internal Errors
